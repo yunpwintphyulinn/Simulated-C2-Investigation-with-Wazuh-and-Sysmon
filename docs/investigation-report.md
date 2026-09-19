@@ -58,7 +58,7 @@ Therefore, the browser-download stage is documented as an operator-observed acti
 
 | Tactic | Technique | ID | Evidence |
 |---|---|---|---|
-| Stealth | Double File Extension | T1036.007 | Filename `Test.pdf.exe` |
+Defense Evasion | Double File Extension | T1036.007 | Filename `Test.pdf.exe` |
 | Execution | User Execution | T1204.002 | Sysmon Event ID 1, launched via `explorer.exe` |
 | Execution | Windows Command Shell | T1059.003 | Payload spawned `cmd.exe` |
 | Command and Control | Non-standard port | T1571 | Sysmon Event ID 3, outbound to port 4444 |
