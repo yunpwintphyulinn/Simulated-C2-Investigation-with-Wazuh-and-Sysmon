@@ -70,4 +70,4 @@ A custom Wazuh rule (ID `100100`, severity level 10) was created to flag any pro
 
 ## 7. Verdict
 
-**Confirmed suspicious activity — authorized simulation.** Raw Sysmon telemetry confirmed execution of `Test.pdf.exe`, an outbound connection to the Kali C2 listener, and a spawned interactive shell. Wazuh's default rules did not generate a corresponding alert for any of this; the custom rule described above will close that specific gap. “rule developed; validation pending”
+**Confirmed suspicious activity — authorized simulation.** Raw Sysmon telemetry confirmed execution of `Test.pdf.exe`, an outbound connection to the Kali C2 listener, and a spawned interactive shell. No matching default Wazuh alert was identified for the observed activity during the scoped investigation. A custom rule was developed to improve detection of the double-extension payload-execution pattern; validation of the resulting alert remains pending. “rule developed; validation pending”
