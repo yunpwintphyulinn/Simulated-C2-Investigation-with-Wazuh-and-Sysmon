@@ -8,7 +8,7 @@ The initial investigation did not find a corresponding alert in `wazuh-alerts-*`
 
 ## Improvement
 
-The custom rule in ****.xml**** detects suspicious executable filenames such as:
+The custom rule is stored in [`../rules/rules.xml`](../rules/rules.xml).
 
 ```text
 Invoice.pdf.exe
@@ -22,12 +22,15 @@ The rule looks for a double-extension executable launched from a user's Download
 
 - `T1036.007 - Double File Extension`
 
-## Edited the rule
+## Rule Deployment
 
-1. Added the rule to `/var/ossec/etc/rules/local_rules.xml` on the Wazuh server.
-2. The manager was restarted :
+1. Added the rule to `/var/ossec/etc/rules/local_rules.xml`.
+2. Restarted the Wazuh manager.
 
    ```bash
    sudo systemctl restart wazuh-manager
    ```
 
+## Validation Status
+
+The rule was deployed to the Wazuh manager and the manager was restarted successfully. Validation of a generated alert matching rule ID `100100` remains pending.
