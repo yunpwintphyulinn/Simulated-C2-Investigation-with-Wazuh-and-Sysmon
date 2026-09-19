@@ -4,7 +4,7 @@ Raw evidence and query notes from the Wazuh/Sysmon investigation, in the order t
 
 ## Detection Gap
 
-All of the above events are present in `wazuh-archives-*`. **No corresponding entry appeared in `wazuh-alerts-*`.** Wazuh had the telemetry it needed but the default ruleset did not elevate this behavior (double-extension executable from Downloads, followed by an outbound connection and a spawned shell) into an alert. See ****detection_rule.md**** for the custom rule written to close this gap.
+All of the above events are present in `wazuh-archives-*`. **No corresponding entry appeared in `wazuh-alerts-*`.** The relevant Sysmon events were present in wazuh-archives-*, but no corresponding alert was identified in wazuh-alerts-* using the investigation queries and timeframe documented below. See ****detection_rule.md**** for the custom rule written to close this gap.
 
 
 ## 1. Find the Payload Execution (Sysmon Event ID 1)
