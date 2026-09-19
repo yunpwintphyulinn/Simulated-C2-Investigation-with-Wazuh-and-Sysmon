@@ -8,7 +8,7 @@ The custom rule addresses the masquerading and payload-execution stage of the at
 
 > **Disclaimer:** This is an isolated, authorized home lab. All activity was performed against VMs owned and controlled by the author, on a “VirtualBox NAT Network”. No real-world systems were targeted. The generated payload is a standard Metasploit test payload used purely to produce realistic attacker telemetry for detection engineering practice.
 
-> **Disclaimer:** Timestamp discrepancy : The screenshots show the chart around 12:25, while the Sysmon UtcTime values are around 11:55–12:08.Because the Wazuh server was brought online after the activity. The investigation timeline uses Sysmon UtcTime, representing endpoint event time. The dashboard’s @timestamp reflects later ingestion into Wazuh after the server became available.
+> **Disclaimer:** Timestamp discrepancy: : Sysmon UtcTime records endpoint event time, while the Wazuh dashboard @timestamp reflects later ingestion after the server became available. The investigation timeline therefore uses Sysmon UtcTime.
 
 ## 1. Objective
 
@@ -25,7 +25,7 @@ The custom rule addresses the masquerading and payload-execution stage of the at
 | Attacker | Kali Linux | 192.168.100.10 | 4 GB RAM, 2 vCPU, 80 GB disk |
 | Victim (monitored endpoint) | Windows 10 | 192.168.100.30 | 4 GB RAM, 4 vCPU, 80 GB disk |
 
-All three VMs are on the same NAT Network(Soc-HomeLab-Net) VirtualBox network so they can reach each other.
+All three VMs are on the same VirtualBox NAT Network (`SOC-HomeLab-Net`) VirtualBox network so they can reach each other.
 
 See [***Lab topology***](environment/1-Lab-topology.png) for the diagram and connectivity notes.
 
@@ -40,7 +40,7 @@ See [***Lab topology***](environment/1-Lab-topology.png) for the diagram and con
 ## 4. Setup Summary and Troubleshooting
 
 Full step-by-step commands are in 
-[***Setup***](docs/setup-and-controlled-stimulation.md)
+[***Setup***](docs/setup-and-controlled-simulation.md)
 [***Troubleshooting***](docs/troubleshooting.md) 
 
 ## 5. Attack Simulation Summary
@@ -80,14 +80,14 @@ To close the gap, a custom rule was written to flag any executable using a misle
 ## 9. Repository Structure
 
 ```
-Simulated-C2-Detection-with-Wazuh-and-Sysmon/
+Simulated-C2-Investigation-with-Wazuh-and-Sysmon/
 ├── README.md
 ├── LICENSE
 ├── docs/
 │   ├── detection-rule.md
 │   ├── investigation-notes.md
 │   ├── investigation-report.md
-│   ├── setup-and-controlled-stimulation.md
+│   ├── setup-and-controlled-simulation.md
 │   └── troubleshooting.md
 ├── environment/
 │   └── 1-Lab-topology.png
